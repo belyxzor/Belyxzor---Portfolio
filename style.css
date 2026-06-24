@@ -69,16 +69,17 @@ body {
 }
 
 /* --- PAGE PRINCIPALE (main.html) --- */
-/* --- ARRIÈRE-PLAN YOUTUBE PLEIN ÉCRAN --- */
+/* --- FIX ABSOLU POUR L'ARRIÈRE-PLAN YOUTUBE --- */
 .video-background {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: -2;
   pointer-events: none;
   overflow: hidden;
+  background-color: #000;
 }
 
 .video-background iframe {
@@ -86,29 +87,20 @@ body {
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: 56.25vw; /* Ratio 16:9 */
+  height: 56.25vw; /* Ratio 16:9 standard */
   min-height: 100vh;
-  min-width: 177.77vh; /* Ratio 16:9 */
+  min-width: 177.77vh; /* Cache les bordures noires */
   transform: translate(-50%, -50%);
 }
 
-/* Sombre par-dessus la vidéo pour faire ressortir la carte */
+/* Sombre par-dessus la vidéo + flou pour faire ressortir la carte */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: -1;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(4px);
   z-index: -1;
 }
