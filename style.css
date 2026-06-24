@@ -6,7 +6,8 @@
 }
 
 body {
-  background: #0a0a0a;
+  /* Magnifique dégradé radial sombre pour remplacer la vidéo */
+  background: radial-gradient(circle at center, #1a1a1a 0%, #070707 100%);
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   overflow: hidden;
@@ -69,39 +70,16 @@ body {
 }
 
 /* --- PAGE PRINCIPALE (main.html) --- */
-/* --- FIX ABSOLU POUR L'ARRIÈRE-PLAN YOUTUBE --- */
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  pointer-events: none;
-  overflow: hidden;
-  background-color: #000;
-}
 
-.video-background iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw; /* Ratio 16:9 standard */
-  min-height: 100vh;
-  min-width: 177.77vh; /* Cache les bordures noires */
-  transform: translate(-50%, -50%);
-}
-
-/* Sombre par-dessus la vidéo + flou pour faire ressortir la carte */
+/* L'overlay applique maintenant un flou diffus sur ton fond */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
   z-index: -1;
 }
 
@@ -115,24 +93,24 @@ body {
 
 /* --- CARTE DESIGN ULTRA-PRO GUNS.LOL --- */
 .card {
-  background: rgba(10, 10, 10, 0.7);
+  background: rgba(15, 15, 15, 0.65);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 24px;
   padding: 40px 45px;
   width: 380px;
   text-align: center;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 
-              0 0 40px rgba(255, 255, 255, 0.02),
-              inset 0 0 12px rgba(255, 255, 255, 0.05);
+              0 0 40px rgba(255, 255, 255, 0.01),
+              inset 0 0 12px rgba(255, 255, 255, 0.04);
   animation: cardShow 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.05);
 }
 
 /* Conteneur Avatar */
