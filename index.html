@@ -20,10 +20,11 @@
     </div>
   </div>
 
-  <script>
+<script>
     document.querySelector(".press").addEventListener("click", () => {
       document.body.style.opacity = "0";
       setTimeout(() => {
+        // En mettant juste "main.html", GitHub trouvera le fichier à coup sûr !
         window.location.href = "main.html";
       }, 500);
     });
